@@ -13,7 +13,11 @@
 </head>
 <body>
 	<!-- <div id="loading"><span id="loadingbar"></span></div> -->
-    <div id="loading"><span id="loadingbar"></span></div>
+    <div id="loading">
+        <img class="loadingimg" src="images/loading.png" />
+        <div class="shine"></div>
+        <div class="loadprecent fs34px">0%</div>
+    </div>
  	<div class="maincontainer first section-in" id="mainpage">
  	    <div class="til1">
         </div>
@@ -73,9 +77,8 @@
             imgObj.src='images/'+imgArr[i];
             imgObj.onload=function(){
                 imgnum++;
-                parcentWidth=(imgnum/imgArr.length)*100+"%";
-
-                loadingBar.style.width=parcentWidth;
+                parcentWidth=parseInt((imgnum/imgArr.length)*100)+"%";
+                $(".loadprecent").html(parcentWidth)
                 if(imgnum==imgArr.length){
                     loading.style.display="none";
                     mainpage.style.display="block";

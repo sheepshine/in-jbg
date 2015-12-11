@@ -365,7 +365,7 @@ body {
   background: url("../images/chikenhead.png");
   background-size: 100% 100%;
   position: absolute;
-  bottom: 2.133333rem;
+  bottom: 2.146667rem;
   left: 50%;
   margin-left: -1.47rem;
   opacity: 0;
@@ -473,7 +473,7 @@ body {
 }
 .pagecontainer .ico {
   position: absolute;
-  top: 1.653333rem;
+  top: 1.333333rem;
   right: 1.653333rem;
   width: 1.76rem;
   height: 1.893333rem;
@@ -507,7 +507,7 @@ body {
 .pagecontainer .info .inputwarp {
   width: 6.053333rem;
   height: 0.48rem;
-  border: 2px solid #28A3E9;
+  border: 1px solid #28A3E9;
   border-radius: 0.48rem;
   margin: 0.293333rem 0 0 0.373333rem;
   color: #28a3E9;
@@ -600,12 +600,12 @@ body {
   text-align: center;
   padding-top: 0.48rem;
   box-sizing: border-box;
-  border-bottom: 1px solid #1D88D4;
+  border-bottom: 1px solid #28A3E9;
 }
 .section .sct .sel-btn {
   height: 0.64rem;
   display: inline-block;
-  border: 2px solid #28A3E9;
+  border: 1px solid #28A3E9;
   border-radius: 0.64rem;
   line-height: 0.533333rem;
   padding: 0 0.24rem;
@@ -621,7 +621,7 @@ body {
 }
 .section .sct .sel-btn-quert {
   height: 0.6rem;
-  border: 2px solid #1D88D4;
+  border: 1px solid #1D88D4;
   display: inline-block;
   line-height: 0.6rem;
   padding: 0 0.213333rem;
@@ -726,7 +726,7 @@ body {
   padding: 0 0.16rem;
   color: #fff;
   border-radius: 0.213333rem;
-  margin-bottom: 0.053333rem;
+  margin-bottom: 0.106667rem;
 }
 .friend-section .content p {
   line-height: 0.666667rem;
@@ -1379,10 +1379,171 @@ body {
 #mainpage {
   display: none;
 }
-#loadingbar {
-  height: 0.8rem;
-  width: 0;
-  background: #4091DC;
-  display: block;
-  transition: width 0.5s;
+#loading {
+  background: #000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.loadingimg {
+  width: 1.92rem;
+  height: 1.6rem;
+  position: absolute;
+  top: 6.746667rem;
+  left: 50%;
+  margin-left: -0.96rem;
+  animation: loading 1s infinite linear;
+}
+.loadprecent {
+  color: #fff;
+  margin-top: 8.613333rem;
+  text-align: center;
+}
+.shine {
+  width: 0.08rem;
+  height: 0.08rem;
+  position: absolute;
+  top: 7.653333rem;
+  left: 50%;
+  border-radius: 0.08rem;
+  box-shadow: 0 0 1.333333rem 1.333333rem #aba796;
+  animation: shine 1s infinite linear;
+}
+@keyframes loading {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  30% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  36% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  46% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  56% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  86% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  87% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  90% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  92% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  99% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+}
+@keyframes shine {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  20% {
+    opacity: 0.1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  30% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  40% {
+    opacity: 0.1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  45% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  50% {
+    opacity: 0.1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  56% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  70% {
+    opacity: 0.1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  86% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  90% {
+    opacity: 0.1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
 }
