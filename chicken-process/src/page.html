@@ -14,6 +14,8 @@
 <body class="nobg">
 	<!-- <div id="loading"><span id="loadingbar"></span></div> -->
  	<div class="pagecontainer">
+        <div class="ico">
+        </div>
         <div class="til1">
         </div>
         <div class="info">
@@ -36,8 +38,6 @@
                 </div>
                 <span>性别:</span>
                 <span>男</span>
-            </div>
-            <div class="ico">
             </div>
         </div>
         <div class="procession">
@@ -74,9 +74,9 @@
             </div>
         </div>
         <div class="sct fs26px">
-            <div class="sel-btn">太小了</div>
-            <div class="sel-btn">合适，刚刚好</div>
-            <div class="sel-btn">太大了，吃球不完</div>
+            <div class="sel-btn js-taste-sel">太小了</div>
+            <div class="sel-btn js-taste-sel">合适，刚刚好</div>
+            <div class="sel-btn js-taste-sel">太大了，吃球不完</div>
         </div>
     </div> 
     <div class="section">
@@ -88,11 +88,11 @@
             </div>
         </div>
         <div class="sct fs26px">
-            <div class="sel-btn start nobor"></div>
-            <div class="sel-btn start nobor"></div>
-            <div class="sel-btn start nobor"></div>
-            <div class="sel-btn start nobor"></div>
-            <div class="sel-btn start nobor"></div>
+            <div class="sel-btn start nobor js-taste-start"></div>
+            <div class="sel-btn start nobor js-taste-start"></div>
+            <div class="sel-btn start nobor js-taste-start"></div>
+            <div class="sel-btn start nobor js-taste-start"></div>
+            <div class="sel-btn start nobor js-taste-start"></div>
         </div>
     </div> 
     <div class="section section-height">
@@ -104,26 +104,26 @@
             </div>
         </div>
         <div class="sct fs26px sct-height">
-           <div class="sel-btn-quert">
+           <div class="sel-btn-quert js-taste-un-reason">
                 服务员太少
            </div>
-           <div class="sel-btn-quert">
+           <div class="sel-btn-quert js-taste-un-reason">
                 上菜太慢
            </div>
-           <div class="sel-btn-quert">
+           <div class="sel-btn-quert js-taste-un-reason">
                 肌肉没打整干净
            </div>
-           <div class="sel-btn-quert">
-                上菜慢
+           <div class="sel-btn-quert js-taste-un-reason">
+                芋儿太耙
            </div>
-           <div class="sel-btn-quert">
-                服务员太少
+           <div class="sel-btn-quert js-taste-un-reason">
+                芋儿太硬
            </div>
-           <div class="sel-btn-quert">
-                服务员太少
+           <div class="sel-btn-quert js-taste-un-reason">
+                沙参太耙
            </div>
-           <div class="sel-btn-quert">
-                服务员太少
+           <div class="sel-btn-quert js-taste-un-reason">
+                有异物
            </div>
         </div>
     </div>
@@ -136,25 +136,25 @@
             </div>
         </div>
         <div class="sct fs26px sct-height">
-           <div class="sel-btn-quert">
+           <div class="sel-btn-quert js-taste-gd-reason">
                 服务员热情
            </div>
-           <div class="sel-btn-quert">
+           <div class="sel-btn-quert js-taste-gd-reason">
                 上菜速度
            </div>
-           <div class="sel-btn-quert">
+           <div class="sel-btn-quert js-taste-gd-reason">
                 鸡肉太太好吃了
            </div>
-           <div class="sel-btn-quert">
+           <div class="sel-btn-quert js-taste-gd-reason">
                 环境好
            </div>
-           <div class="sel-btn-quert">
+           <div class="sel-btn-quert js-taste-gd-reason">
                 芋儿好吃
            </div>
-           <div class="sel-btn-quert">
+           <div class="sel-btn-quert js-taste-gd-reason">
                 米饭好吃
            </div>
-           <div class="sel-btn-quert">
+           <div class="sel-btn-quert js-taste-gd-reason">
                 沙参好吃
            </div>
            <button class="btn-pay-cook fs26px">好吃得板！打赏大厨2元大洋！</button>
@@ -168,6 +168,39 @@
         </div>
     </div>
     <button class="btn-submit fs34px">提交评论</button>
+    <div class="section heightauto friend-section upload-img">
+        <div class="userinfo">
+            <div class="userheadimg fl">
+            </div>
+            <div class="username fs32px fl">
+                <div class="name fl">杨潮奔</div>
+                <div class="start-warp fl">
+                    <div class="sel-btn start nobor fl"></div>
+                    <div class="sel-btn start nobor fl"></div>
+                    <div class="sel-btn start nobor fl"></div>
+                    <div class="sel-btn start nobor fl"></div>
+                    <div class="sel-btn start nobor fl"></div>
+                </div>
+            </div>
+            <div class="usertip fs20px fl">
+                <div>芋儿太硬</div>
+                <div>服务员太少</div>
+            </div>
+        </div>
+        <div class="content fs32px">
+            <textarea class="conten-input fs32px" placeholder="还有啥子想跟鸡哥说的，来这里整…"></textarea>
+            <div class="photo">
+                <input class="uploadbtn" type="file" accept="image/*" />
+                <img src="images/upload.png" />
+                <img src="images/1111111.jpg" />
+                <img src="images/222222.jpg" />
+                <img src="images/1111111.jpg" />
+            </div>
+        </div>
+        <div class="post-info fs26px">
+            <button class="fs32px">提交</button>
+        </div>
+    </div>
     <div class="section heightauto friend-section">
         <div class="userinfo">
             <div class="userheadimg fl">
@@ -314,6 +347,9 @@
             <input />
             <button class="fs26px">发送</button>
         </div>
+    </div>
+    <div class="get-more fs26px">
+        加载更多
     </div>  
  	<script type="text/javascript" src="js/main.js?rev=d41b52c5ec21d9a29868fb2f8c63d00f"></script>
  	<script type="text/javascript">

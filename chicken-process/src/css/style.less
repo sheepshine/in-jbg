@@ -63,14 +63,126 @@ html,body{
     background-size: 100% 100%;
 }
 .maincontainer{
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 10.0rem;
     height: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+    overflow: hidden;
+}
+.section-in{
+    display: block;
 }
 .first{
     padding-top: 1.28rem;
+}
+.sec{
+    display: none;
+}
+.section-in{
+    display: block;
+}
+.section-in.sec{
+    .chikenhead{
+        animation:chicken 1s;
+        animation-delay:1s;
+        animation-fill-mode:forwards;
+    }
+    .chikenbody{
+        animation:chicken 1s;
+        animation-delay:1s;
+        animation-fill-mode:forwards;
+    }
+    .tilwarp1{
+        animation:sec-til1 0.2s linear;
+        animation-delay:2s;
+        animation-fill-mode:forwards;
+    }
+    .tilwarp2{
+        animation:sec-til2 0.2s linear;
+        animation-delay:2.2s;
+        animation-fill-mode:forwards;
+    }
+    .tilwarp3{
+        animation:sec-til1 0.2s linear;
+        animation-delay:2.4s;
+        animation-fill-mode:forwards;
+    }
+    .tilwarp4{
+        animation:sec-til2 0.2s linear;
+        animation-delay:2.6s;
+        animation-fill-mode:forwards;
+    }
+    .hand{
+       animation:hand 5s infinite;
+       animation-delay: 4s;
+       animation-fill-mode:forwards;
+    }
+}
+.section-out.first{
+    .til1{
+        animation:in-til1-out 1s;
+        animation-fill-mode:forwards;
+    }
+    .til2{
+        animation:in-til2-out 1s;
+        animation-fill-mode:forwards;
+   }
+    .til3{
+        animation:in-til1-out 1s;
+        animation-fill-mode:forwards;
+    }
+    .ico{
+        animation:ico-out 2s;
+        animation-fill-mode:forwards;
+    }
+    .shadow{
+        animation:shadow-out 1s;
+        animation-fill-mode:forwards;
+    }
+    .person{
+        animation:person-out 1s;
+        animation-fill-mode:forwards;
+    }
+    .arrow{
+        animation:arrow-out 1s;
+        animation-delay:0.2s;
+        animation-fill-mode:forwards;
+    }
+}
+.section-in.first{
+    .til1{
+        animation:in-til1 1s;
+        animation-delay:1s;
+        animation-fill-mode:forwards;
+    }
+    .til2{
+        animation:in-til2 1s;
+        animation-delay:1s;
+        animation-fill-mode:forwards;
+   }
+    .til3{
+        animation:in-til1 1s;
+        animation-delay:1s;
+        animation-fill-mode:forwards;
+    }
+    .ico{
+        animation:ico 2s;
+        animation-delay:2.2s;
+        animation-fill-mode:forwards;
+    }
+    .shadow{
+        animation:shadow 1s;
+    }
+    .person{
+        animation:person 1s;
+    }
+    .arrow{
+        animation:arrow 1s linear infinite;
+        animation-delay:2s;
+    }
 }
 .first{
     .til1{
@@ -78,22 +190,31 @@ html,body{
         height: 0.893333rem;
         background: url("../images/index-til1.png");
         .bgfull;
-        margin-left:2.586667rem;
+        opacity: 0;
+        position: absolute;
+        left: 2.586667rem;
+        top: 1.28rem;
     }
     .til2{
         width: 5.4rem;
         height: 0.906667rem;
         background: url("../images/index-til2.png");
         .bgfull;
-        margin: 0.213333rem 0 0 1.12rem;
+        position: absolute;
+        left: 1.146667rem;
+        top: 2.32rem;
+        opacity: 0;
     }
     .til3{
         width: 5.96rem;
         height: 0.906667rem;
         background: url("../images/index-til3.png");
         .bgfull;
-        margin: 0.186667rem 0 0 1.333333rem;
+        position: absolute;
+        left: 1.333333rem;
+        top: 3.413333rem;
         display: inline-block;
+        opacity: 0;
     }
     .ico{
         width: 0.76rem;
@@ -101,8 +222,10 @@ html,body{
         background: url("../images/ico.png");
         .bgfull;
         display: inline-block;
-        position: relative;
-        bottom: 0.08rem;
+        position: absolute;
+        right: 1.546667rem;
+        top: 3.466667rem;
+        opacity: 0;
     }
     .shadow{
         width: 8.32rem;
@@ -111,7 +234,7 @@ html,body{
         .bgfull;
         position: absolute;
         bottom: 0;
-        left: 0
+        left: 0;
     }
     .person{
         width: 7.373333rem;
@@ -122,6 +245,17 @@ html,body{
         bottom: 0;
         left: 1.12rem;
     }
+    .arrow{
+        width: 1.08rem;
+        height: 0.693333rem;
+        background: url("../images/arrow.png");
+        .bgfull;
+        position: absolute;
+        bottom: 0.32rem;
+        left: 50%;
+        margin-left: -0.346667rem;
+        opacity: 0
+    }
 }
 .sec{
     padding-top: 1.066667rem;
@@ -129,11 +263,70 @@ html,body{
 .sec{
     .til1{
         width: 8.2rem;
-        height: 5.573333rem;
-        background: url("../images/2-tile.png");
+        height: 1.44rem;
+        background: url("../images/2-tile_1.png");
         .bgfull;
         display: block;
         margin: 0 auto;
+    }
+    .til2{
+        position: absolute;
+        right:  0;
+        width: 8.2rem;
+        height: 1.133333rem;
+        background: url("../images/2-tile_2.png");
+        .bgfull;
+        display: block;
+        top: -0.013333rem;
+    }
+    .til3{
+        position: absolute;
+        left:  0;
+        width: 8.2rem;
+        height: 1.44rem;
+        background: url("../images/2-tile_3.png");
+        .bgfull;
+        display: block;
+        margin: 0 auto;
+    }
+    .til4{
+        position: absolute;
+        right: 1.2rem;
+        width: 5.733333rem;
+        height: 2.226667rem;
+        background: url("../images/2-tile_4.png");
+        .bgfull;
+        display: block;
+        margin: 0 auto;
+    }
+    .tilwarp1{
+        width: 0;
+        overflow: hidden;
+        margin:-0.013333rem 0 0 0.893333rem;
+    }
+    .tilwarp2{
+        position: absolute;
+        right: 0.906667rem;
+        top: 2.4rem;
+        width: 0;
+        height: 1.133333rem;
+        overflow: hidden;
+    }
+    .tilwarp3{
+        position: absolute;
+        left: 0.893333rem;
+        top: 3.506667rem;
+        width: 0;
+        height: 1.44rem;
+        overflow: hidden;
+    }
+    .tilwarp4{
+        position: absolute;
+        right: 0.906667rem;
+        top: 4.933333rem;
+        width: 0;
+        height: 2.226667rem;
+        overflow: hidden;
     }
     .chikenhead{
         width: 2.88rem;
@@ -143,7 +336,8 @@ html,body{
         position: absolute;
         bottom: 2.133333rem;
         left: 50%;
-        margin-left: -1.44rem;
+        margin-left: -1.47rem;
+        opacity: 0;
     }
     .chikenbody{
         width: 3.893333rem;
@@ -154,6 +348,93 @@ html,body{
         bottom: 0;
         left: 50%;
         margin-left: -1.946667rem;
+        opacity: 0;
+    }
+    .hand{
+        width: 1.373333rem;
+        height: 1.72rem;
+        background: url("../images/hand.png");
+        .bgfull;
+        position: absolute;
+        bottom: 4.026667rem;
+        left: 2.826667rem;
+        opacity: 0;
+    }
+    .knife{
+        width: 3.52rem;
+        height: 2.56rem;
+        background: url("../images/knife.png");
+        .bgfull;
+        position: absolute;
+        bottom: 1.866667rem;
+        left: 1.733333rem;
+        opacity: 0;
+    }
+    .avli.knife{
+        animation:knife 1s;
+    }
+    .knifelight{
+        width: 3.906667rem;
+        height: 2.053333rem;
+        background: url("../images/knifelight.png");
+        .bgfull;
+        position: absolute;
+        bottom: 2.0rem;
+        left: 3.386667rem;
+        opacity: 0
+    }
+    .avli.knifelight{
+        animation:knifelight 1s;
+        animation-delay:0.5s;
+    }
+    .blood{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #931519;
+        opacity: 0;
+    }
+    .avli.blood{
+        animation:blood 1s;
+        animation-delay:0.5s;
+    }
+    .avli.chikenhead{
+        animation:headfly 1s linear;
+        animation-delay:1.3s;
+        opacity: 1;
+        animation-fill-mode:forwards;
+    }
+    .avli.chikenbody{
+        animation:bodyout 1s linear;
+        animation-delay:1.3s;
+        animation-fill-mode:forwards;
+        opacity: 1;
+    }
+    .avli.tilwarp1{
+        width: 8.2rem;
+        animation:sec-til1-out 0.6s linear;
+        animation-delay:1.5s;
+        animation-fill-mode:forwards;
+    }
+    .avli.tilwarp2{
+        width: 8.2rem;
+        animation:sec-til2-out 0.6s linear;
+        animation-delay:1.5s;
+        animation-fill-mode:forwards;
+    }
+    .avli.tilwarp3{
+        width: 8.2rem;
+        animation:sec-til1-out 0.6s linear;
+        animation-delay:1.5s;
+        animation-fill-mode:forwards;
+    }
+    .avli.tilwarp4{
+        width: 8.2rem;
+        animation:sec-til2-out 0.6s linear;
+        animation-delay:1.5s;
+        animation-fill-mode:forwards;
     }
 }
 .pagecontainer{
@@ -161,6 +442,18 @@ html,body{
     background: #fff
 }
 .pagecontainer{
+    .ico{
+        position: absolute;
+        top: 1.653333rem;
+        right: 1.653333rem;
+        width: 1.76rem;
+        height: 1.893333rem;
+        background: url("../images/ico2.png");
+        .bgfull;
+        z-index: 999;
+        animation:icoin 0.6s linear;
+        animation-fill-mode: forwards;
+    }
     .til1{
         width: 8.146667rem;
         height: 0.693333rem;
@@ -213,15 +506,6 @@ html,body{
             display: inline-block;
             position: relative;
             bottom: 0.08rem;
-        }
-        .ico{
-            position: absolute;
-            top: 0.106667rem;
-            right: 1.653333rem;
-            width: 1.76rem;
-            height: 1.893333rem;
-            background: url("../images/ico2.png");
-            .bgfull;
         }
     }
     .procession{
@@ -313,7 +597,7 @@ html,body{
             height: 0.853333rem;
             background: url("../images/starico.png") no-repeat;
             background-size: cover;
-            background-position: 0 0;
+            background-position: 0 100%;
         }
         .sel-btn-quert{
             height: 0.6rem;
@@ -533,8 +817,46 @@ html,body{
         }
     }
 }
-
-
+.upload-img{
+    .conten-input{
+        width: 9.2rem;
+        height: 1.373333rem;
+        padding: 0.08rem 0.213333rem;
+        box-sizing: border-box;
+        border: 0;
+        color: #646464;
+    }
+    .photo{
+        position: relative;
+    }
+    .uploadbtn{
+        position: absolute;
+        top: 0.16rem;
+        left: 0;
+        width: 2.986667rem;
+        height: 2.986667rem;
+        opacity: 0;
+    }
+    .post-info button{
+        width: 2.986667rem;
+        height: 1.066667rem;
+        background: #1D88D4;
+        border-radius: 0.213333rem;
+        color: #fff;
+        margin-bottom: 0.16rem;
+    }
+}
+.get-more{
+    line-height: 1.12rem;
+    text-align: center;
+}
+.btn-ava{
+    color: #fff !important;
+    background: #1D88D4 !important;
+}
+.start-ava{
+    background-position:0 0 !important;
+}
 .fl{float: left;}
 .fr{float: right;}
 .no-m-t{
@@ -576,3 +898,168 @@ html,body{
 [data-dpr="3"] .fs32px{
     font-size: 48px !important;
 }
+
+@keyframes in-til1{
+    from{
+        transform:translateX(1.333333rem) translate3d(0, 0, 0);opacity: 0;backface-visibility: hidden;perspective: 1000;
+    }
+    to{opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes in-til2{
+    from{
+        transform:translateX(-1.333333rem) translate3d(0, 0, 0);opacity: 0;backface-visibility: hidden;perspective: 1000;
+    }
+    to{opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes ico{
+    from{
+        opacity: 0;backface-visibility: hidden;perspective: 1000;
+    }
+    to{ opacity:1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes person{
+    from{
+        width: 17.706667rem;height: 23.706667rem;backface-visibility: hidden;perspective: 1000;
+    }
+    to{ opacity:1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes shadow{
+    from{
+        transform:translateX(-6.666667rem) translate3d(0, 0, 0);width: 10.666667rem;height:13.333333rem;backface-visibility: hidden;perspective: 1000;
+    }
+    to{ opacity:1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes arrow{
+    from{
+        transform:translateY(-0.8rem) translate3d(0, 0, 0);opacity: 0;backface-visibility: hidden;perspective: 1000;
+    }
+    to{ opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+
+@keyframes in-til1-out{
+    from{
+      opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;
+    }
+    to{  transform:translateX(-8.0rem) translate3d(0, 0, 0);opacity: 0;backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes in-til2-out{
+    from{
+        opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;
+    }
+    to{transform:translateX(8.0rem) translate3d(0, 0, 0);opacity: 0;backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes ico-out{
+    from{
+      
+    }
+    to{transform:translateX(-8.0rem) translate3d(0, 0, 0);opacity: 0;backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes person-out{
+    from{
+         
+    }
+    to{transform:translateX(13.333333rem) translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes shadow-out{
+    from{
+       
+    }
+    to{transform:translateX(13.333333rem) translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes arrow-out{
+    from{
+       opacity: 1 ;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;
+    }
+    to{transform:translateY(1.333333rem) translate3d(0, 0, 0);opacity: 1 ;backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes chicken{
+    from{
+       transform:translateY(8.0rem) translate3d(0, 0, 0);opacity: 0;backface-visibility: hidden;perspective: 1000;
+    }
+    to{opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes sec-til1{
+    from{
+       
+    }
+    to{width: 8.2rem;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes sec-til2{
+    from{
+       
+    }
+    to{width: 8.2rem;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes hand{
+    0%   {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    30%  {opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    40%  {transform:translateY(2.16rem) translateX(4.226667rem) translate3d(0, 0, 0);opacity: 1;backface-visibility: hidden;perspective: 1000;}
+    55%  {transform:translateY(0) translateX(0) translate3d(0, 0, 0);opacity: 1;backface-visibility: hidden;perspective: 1000;}
+    70%  {transform:translateY(2.16rem) translateX(4.226667rem) ;opacity: 1;backface-visibility: hidden;perspective: 1000;}
+    71% {opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    100% {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes knife{
+    0%   {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    10%  {opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    80%  {transform:translateY(2.88rem) translateX(5.333333rem) translate3d(0, 0, 0);opacity: 1;backface-visibility: hidden;perspective: 1000;}
+    100% {transform:translateY(2.88rem) translateX(5.333333rem) translate3d(0, 0, 0);opacity: 0;backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes knifelight{
+    0%   {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    30%  {opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    40%  {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    55%  {opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    70%  {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    71%  {opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    100% {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes blood{
+    0%   {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    10%  {opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    20%  {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    30%  {opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    40%  {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    50%  {opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    60% {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    70%   {opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    80%  {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+    90%  {opacity: 1;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+   100%  {opacity: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes headfly{
+    0%   {transform:rotate(0deg) translate3d(0, 0, 0);width: 4.32rem;height: 9.0rem;backface-visibility: hidden;perspective: 1000;}
+    15%  {transform:rotate(90deg) translate3d(0, 0, 0);width: 5.76rem;height: 12.0rem;backface-visibility: hidden;perspective: 1000;}
+    30%  {transform:rotate(180deg) translate3d(0, 0, 0);width: 7.2rem;height: 15.0rem;backface-visibility: hidden;perspective: 1000;}
+    45%  {transform:rotate(270deg) translate3d(0, 0, 0);width: 8.64rem;height: 18.0rem;backface-visibility: hidden;perspective: 1000;}
+    60%  {transform:rotate(360deg) translate3d(0, 0, 0);width: 10.08rem;height: 21.0rem;backface-visibility: hidden;perspective: 1000;}
+    75%  {transform:rotate(450deg) translate3d(0, 0, 0);width: 11.52rem;height: 24.0rem;backface-visibility: hidden;perspective: 1000;}
+    90%  {transform:rotate(450deg) translate3d(0, 0, 0);width: 14.4rem;height: 30.0rem;backface-visibility: hidden;perspective: 1000;}
+    100%  {transform:rotate(450deg) translate3d(0, 0, 0) translateX(-60rem) translateY(60rem);width: 20rem ;height: 35rem;backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes bodyout{
+    from{
+       opacity: 1 ;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;
+    }
+    to{transform:translateY(4.0rem) translate3d(0, 0, 0);opacity: 1;backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes sec-til1-out{
+    from{
+       width: 8.2rem;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;
+    }
+    to{width: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes sec-til2-out{
+    from{
+       width: 8.2rem;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;
+    }
+    to{width: 0;transform:translate3d(0, 0, 0);backface-visibility: hidden;perspective: 1000;}
+}
+@keyframes icoin{
+   from{
+       transform:rotate(0deg) translate3d(0, 0, 0);width: 17.6rem;height: 18.933333rem;backface-visibility: hidden;perspective: 1000;
+    }
+    to{transform:rotate(720deg) translate3d(0, 0, 0);width: 1.76rem;height: 1.893333rem;backface-visibility: hidden;perspective: 1000; }
+}
+#mainpage{display: none;}
+#loadingbar{height: 0.8rem;width: 0;background: #4091DC;display: block;transition: width 0.5s;}
