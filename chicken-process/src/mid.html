@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	</head>
+
+	<body>
+		<div class="maincontainer mychip">
+			
+		</div>
+		<script>
+			var openId = GetQueryString("openId");
+			
+			$(function(){	
+				
+				if(!openId)
+				{
+					window.location.href='http://yd.liziba.com/oauth/weixin/OAuth?redirect_uri='+window.location.href+'&scope=snsapi_userinfo'
+					return;
+				}
+				localStorage.openIdYSYCH=openId;
+				$.ajax({
+					type: 'get',
+					async: true,
+					dataType: 'jsonp',
+					data:{
+						openId:localStorage.openIdYSYCH
+					},
+					url: 'http://yd.liziba.com/oauth/weixin/WxUser!getUserInfo',
+					success: function(data) {
+						localStorage.userUrl=data.headimgUrl+'64';
+						localStorage.username=data.wxUserName;
+						setTimeout(function(){
+							window.location.href=localStorage.midurl;
+						},200)
+					}
+				});
+					
+				
+			});
+				// function getOauthUrl(redirect_uri,snsapi,userInfo,appId)
+				// 	{
+				// 	    if(!appId){
+				// 	        appId = APP_ID;
+				// 	    }
+				// 	    var mathrandoma=(Math.random()+"").substr(2)
+				// 	    mathrandoma.substr(mathrandoma%10)
+				// 	    var  r=""+redirect_uri.replace(new RegExp(/(&)/g),"xiaxia-_-xiaxia")+"&appId="+appId+"&scope="+snsapi+"&userInfo="+userInfo+"&xxxxx="+mathrandoma;
+				// 	    var  url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+				// 	        + appId + "&redirect_uri="
+				// 	        + encodeURIComponent(r)
+				// 	        + "&response_type=code&scope=" + snsapi + "&state=1&connect_redirect=1#wechat_redirect"+"&xxxx="+mathrandoma;
+				// 	    return url;
+				// 	}
+				function GetQueryString(name){
+					var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+					var r = window.location.search.substr(1).match(reg);
+					if(r!=null)return  unescape(r[2]); return null;
+				};
+				
+		</script>
+	</body>
+
+</html>

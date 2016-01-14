@@ -9,8 +9,17 @@
 	<script src="js/a.js?rev=8f16100cba812176880b063577711755"></script>
 	<script src="js/a_css.js?rev=35c51dcc4877d24bc67ddcc71eabf2f8"></script>
 	<link rel="stylesheet" href="css/style.css?rev=cdf9f7b9ed315dd9bfb4b8cb9192d05d" />
-	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<!-- <script type="text/javascript" src="js/zepto.min.js"></script> -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/ajaxfileupload.js"></script>
+    <script src="js/jquery.tap.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 </head>
+<div id="loading">
+    <img class="loadingimg" src="images/loading.png" />
+    <div class="shine"></div>
+    <div class="loadprecent fs34px">0%</div>
+</div>
 <body class="nobg">
 	<!-- <div id="loading"><span id="loadingbar"></span></div> -->
  	<div class="pagecontainer">
@@ -31,7 +40,7 @@
                 <div class="litico ico2">
                 </div>
                 <span>体重:</span>
-                <span>6.5斤</span>
+                <span id="chicken_weight">..</span>
             </div>
             <div class="inputwarp fl fs20px">
                 <div class="litico ico3">
@@ -40,9 +49,16 @@
                 <span>男</span>
             </div>
         </div>
+        <div class="procession-ico">
+            <!-- <div class="ico0 nomargin"></div>
+            <div class="ico1"></div>
+            <div class="ico2"></div>
+            <div class="ico3"></div>
+            <div class="ico4"></div> -->
+        </div>
         <div class="procession">
         </div>
-        <div class="procession-til fs26px">
+        <div class="procession-til fs26px" id="processionTil">
             <div class="warp">
                 <div>送达</div>
                 <div>12:00</div>
@@ -65,7 +81,7 @@
             </div>
         </div>
     </div>
- 	<div class="section">
+ 	<div class="section comment-one">
         <div class="til">
             <div class="ico">
             </div>
@@ -73,13 +89,13 @@
                 今天的鸡大小合适吗?
             </div>
         </div>
-        <div class="sct fs26px">
-            <div class="sel-btn js-taste-sel">太小了</div>
+        <div class="sct fs26px" id="sel-one-date">
+           <!--  <div class="sel-btn js-taste-sel">太小了</div>
             <div class="sel-btn js-taste-sel">合适，刚刚好</div>
-            <div class="sel-btn js-taste-sel">太大了，吃球不完</div>
+            <div class="sel-btn js-taste-sel">太大了，吃球不完</div> -->
         </div>
     </div> 
-    <div class="section">
+    <div class="section comment-one">
         <div class="til til2">
             <div class="ico ico2">
             </div>
@@ -95,7 +111,7 @@
             <div class="sel-btn start nobor js-taste-start"></div>
         </div>
     </div> 
-    <div class="section section-height">
+    <div class="section section-height comment-one" id="unconforta">
         <div class="til til3">
             <div class="ico ico3">
             </div>
@@ -103,8 +119,8 @@
                 不满意的理由是什么呢?
             </div>
         </div>
-        <div class="sct fs26px sct-height">
-           <div class="sel-btn-quert js-taste-un-reason">
+        <div class="sct fs26px sct-height" id="sel-two-date">
+           <!-- <div class="sel-btn-quert js-taste-un-reason">
                 服务员太少
            </div>
            <div class="sel-btn-quert js-taste-un-reason">
@@ -124,10 +140,10 @@
            </div>
            <div class="sel-btn-quert js-taste-un-reason">
                 有异物
-           </div>
+           </div> -->
         </div>
     </div>
-    <div class="section section-height2">
+    <div class="section section-height2 comment-one" id="conforta">
         <div class="til til3">
             <div class="ico ico3">
             </div>
@@ -135,43 +151,44 @@
                 满意的理由是什么呢?
             </div>
         </div>
-        <div class="sct fs26px sct-height">
-           <div class="sel-btn-quert js-taste-gd-reason">
-                服务员热情
+        <div class="sct fs26px sct-height" >
+            <div id="sel-three-date">
+               <!-- <div class="sel-btn-quert js-taste-gd-reason">
+                    服务员热情
+               </div>
+               <div class="sel-btn-quert js-taste-gd-reason">
+                    上菜速度
+               </div>
+               <div class="sel-btn-quert js-taste-gd-reason">
+                    鸡肉太太好吃了
+               </div>
+               <div class="sel-btn-quert js-taste-gd-reason">
+                    环境好
+               </div>
+               <div class="sel-btn-quert js-taste-gd-reason">
+                    芋儿好吃
+               </div>
+               <div class="sel-btn-quert js-taste-gd-reason">
+                    米饭好吃
+               </div>
+               <div class="sel-btn-quert js-taste-gd-reason">
+                    沙参好吃
+               </div> -->
            </div>
-           <div class="sel-btn-quert js-taste-gd-reason">
-                上菜速度
-           </div>
-           <div class="sel-btn-quert js-taste-gd-reason">
-                鸡肉太太好吃了
-           </div>
-           <div class="sel-btn-quert js-taste-gd-reason">
-                环境好
-           </div>
-           <div class="sel-btn-quert js-taste-gd-reason">
-                芋儿好吃
-           </div>
-           <div class="sel-btn-quert js-taste-gd-reason">
-                米饭好吃
-           </div>
-           <div class="sel-btn-quert js-taste-gd-reason">
-                沙参好吃
-           </div>
-           <button class="btn-pay-cook fs26px">好吃得板！打赏大厨2元大洋！</button>
+           <!-- <button class="btn-pay-cook fs26px" id="pay">好吃得板！打赏大厨2元大洋！</button>
            <div class="pwarp fs26px">
                <p>鸡哥向各位大爷承诺:凡是大爷们打赏的大厨，</p>
                <p>鸡哥也会拿出相同金额的赏金，打赏该大厨。</p>
                <p>赏金越多，大厨等级越高；赏金越少，</p>
                <p>我们光明正大地把他干掉！来，拿出你的</p>
                <p>小皮鞭，尽情地抽打大厨们吧！</p>
-           </div>
+           </div> -->
         </div>
     </div>
-    <button class="btn-submit fs34px">提交评论</button>
-    <div class="section heightauto friend-section upload-img">
-        <div class="userinfo">
-            <div class="userheadimg fl">
-            </div>
+    <button class="btn-submit fs34px comment-one" id="commitSubmit">提交评论</button>
+    <div class="section heightauto friend-section upload-img" id="uploadImg">
+        <!-- <div class="userinfo">
+            <img class="userheadimg fl" src="images/user.jpg" />
             <div class="username fs32px fl">
                 <div class="name fl">杨潮奔</div>
                 <div class="start-warp fl">
@@ -188,172 +205,239 @@
             </div>
         </div>
         <div class="content fs32px">
-            <textarea class="conten-input fs32px" placeholder="还有啥子想跟鸡哥说的，来这里整…"></textarea>
+            <textarea class="conten-input fs32px" id="contentInput" placeholder="还有啥子想跟鸡哥说的，来这里整…"></textarea>
             <div class="photo">
-                <input class="uploadbtn" type="file" accept="image/*" />
-                <img src="images/upload.png" />
-                <img src="images/1111111.jpg" />
-                <img src="images/222222.jpg" />
-                <img src="images/1111111.jpg" />
+                <div class="uploadinputwarp">
+                    <input class="uploadbtn" id="uploadImgInput" name="imgFile" type="file" accept="image/*" />
+                </div>
+                <input type="hidden" id="uploadId" name="id">
+                <div class="uoploadimgwarp">
+                    <img src="images/upload.png" />
+                </div>
             </div>
         </div>
         <div class="post-info fs26px">
-            <button class="fs32px">提交</button>
-        </div>
+            <button class="fs32px" id="uploadCommit">提交</button>
+        </div> -->
     </div>
-    <div class="section heightauto friend-section">
-        <div class="userinfo">
-            <div class="userheadimg fl">
-            </div>
-            <div class="username fs32px fl">
-                <div class="name fl">杨潮奔</div>
-                <div class="start-warp fl">
-                    <div class="sel-btn start nobor fl"></div>
-                    <div class="sel-btn start nobor fl"></div>
-                    <div class="sel-btn start nobor fl"></div>
-                    <div class="sel-btn start nobor fl"></div>
-                    <div class="sel-btn start nobor fl"></div>
+    <div id="friendList">
+        <!-- <div class="section heightauto friend-section">
+            <div class="userinfo">
+                <img class="userheadimg fl" src="images/user.jpg" />
+                <div class="username fs32px fl">
+                    <div class="name fl">杨潮奔</div>
+                    <div class="start-warp fl">
+                        <div class="sel-btn start nobor fl"></div>
+                        <div class="sel-btn start nobor fl"></div>
+                        <div class="sel-btn start nobor fl"></div>
+                        <div class="sel-btn start nobor fl"></div>
+                        <div class="sel-btn start nobor fl"></div>
+                    </div>
+                </div>
+                <div class="usertip fs20px fl">
+                    <div>芋儿太硬</div>
+                    <div>服务员太少</div>
                 </div>
             </div>
-            <div class="usertip fs20px fl">
-                <div>芋儿太硬</div>
-                <div>服务员太少</div>
-            </div>
-        </div>
-        <div class="content fs32px">
-            <p>必须来整锅鸡，慰劳哈国人！</p>
-            <div class="photo">
-                <img src="images/1111111.jpg" />
-                <img src="images/222222.jpg" />
-                <img src="images/1111111.jpg" />
-            </div>
-        </div>
-        <div class="post-info fs26px">
-            <span class="time">今天13:20</span>
-            <span class="address">李子坝梁山鸡</span>
-            <div class="praise fr">
-            </div>
-        </div>
-        <div class="praise-info">
-            <div class="praise">
-            </div>
-            <div class="praise-list fs26px">
-                <div class="praise-list-arr fs26px">
-                    花花、胡明博、熊熊、豆腐、王菲、吴白白
-                </div>
-                等8人觉得很赞
-            </div>
-        </div>
-        <div class="comment fs26px">
-            <div class="comment-item">
-                <b class="comment-user">花花:</b>
-                <b class="comment-text">吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~
-                </b>
-            </div>
-            <div class="comment-item">
-                <b class="comment-user">花花:</b>
-                <b class="comment-text">吃得好也~
-                </b>
-            </div>
-            <div class="comment-item">
-                <b class="comment-user">花花:</b>
-                <b class="comment-text">吃得好也~吃得好也~吃得好也~
-                </b>
-            </div>
-        </div>
-        <div class="my-comment fs26px">
-            <input />
-            <button class="fs26px">发送</button>
-        </div>
-    </div>
-    <div class="section heightauto friend-section">
-        <div class="userinfo">
-            <div class="userheadimg fl">
-            </div>
-            <div class="username fs32px fl">
-                <div class="name fl">杨潮奔</div>
-                <div class="start-warp fl">
-                    <div class="sel-btn start nobor fl"></div>
-                    <div class="sel-btn start nobor fl"></div>
-                    <div class="sel-btn start nobor fl"></div>
-                    <div class="sel-btn start nobor fl"></div>
-                    <div class="sel-btn start nobor fl"></div>
+            <div class="content fs32px">
+                <p>必须来整锅鸡，慰劳哈国人！</p>
+                <div class="photo">
+                    <img src="images/1111111.jpg" />
+                    <img src="images/222222.jpg" />
+                    <img src="images/1111111.jpg" />
                 </div>
             </div>
-            <div class="usertip fs20px fl">
-                <div>芋儿太硬</div>
-                <div>服务员太少</div>
-                <div>芋儿太硬</div>
-                <div>服务员太少</div>
-                <div>芋儿太硬</div>
-                <div>服务员太少</div>
-                <div>芋儿太硬</div>
-                <div>服务员太少</div>
-                <div>芋儿太硬</div>
-                <div>服务员太少</div>
-                <div>芋儿太硬</div>
-                <div>服务员太少</div>
-                <div>芋儿太硬</div>
-                <div>服务员太少</div>
-            </div>
-        </div>
-        <div class="content fs32px">
-            <p>必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！</p>
-            <div class="photo">
-                <img src="images/1111111.jpg" />
-                <img src="images/222222.jpg" />
-                <img src="images/1111111.jpg" />
-                <img src="images/1111111.jpg" />
-                <img src="images/222222.jpg" />
-                <img src="images/222222.jpg" />
-                <img src="images/1111111.jpg" />
-                <img src="images/1111111.jpg" />
-            </div>
-        </div>
-        <div class="post-info fs26px">
-            <span class="time">今天13:20</span>
-            <span class="address">李子坝梁山鸡</span>
-            <div class="praise fr">
-            </div>
-        </div>
-        <div class="praise-info">
-            <div class="praise">
-            </div>
-            <div class="praise-list fs26px">
-                <div class="praise-list-arr fs26px">
-                    花花、胡明博、熊熊、豆腐、王菲、吴白白
+            <div class="post-info fs26px">
+                <span class="time">今天13:20</span>
+                <span class="address">李子坝梁山鸡</span>
+                <div class="praise fr">
                 </div>
-                等8人觉得很赞
+            </div>
+            <div class="praise-info">
+                <div class="praise">
+                </div>
+                <div class="praise-list fs26px">
+                    <div class="praise-list-arr fs26px">
+                        花花、胡明博、熊熊、豆腐、王菲、吴白白
+                    </div>
+                    等8人觉得很赞
+                </div>
+            </div>
+            <div class="comment fs26px">
+                <div class="comment-item">
+                    <b class="comment-user">花花:</b>
+                    <b class="comment-text">吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~
+                    </b>
+                </div>
+                <div class="comment-item">
+                    <b class="comment-user">花花:</b>
+                    <b class="comment-text">吃得好也~
+                    </b>
+                </div>
+                <div class="comment-item">
+                    <b class="comment-user">花花:</b>
+                    <b class="comment-text">吃得好也~吃得好也~吃得好也~
+                    </b>
+                </div>
+            </div>
+            <div class="my-comment fs26px">
+                <input />
+                <button class="fs26px">发送</button>
             </div>
         </div>
-        <div class="comment fs26px">
-            <div class="comment-item">
-                <b class="comment-user">花花:</b>
-                <b class="comment-text">吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~
-                </b>
+        <div class="section heightauto friend-section">
+            <div class="userinfo">
+                <div class="userheadimg fl">
+                </div>
+                <div class="username fs32px fl">
+                    <div class="name fl">杨潮奔</div>
+                    <div class="start-warp fl">
+                        <div class="sel-btn start nobor fl"></div>
+                        <div class="sel-btn start nobor fl"></div>
+                        <div class="sel-btn start nobor fl"></div>
+                        <div class="sel-btn start nobor fl"></div>
+                        <div class="sel-btn start nobor fl"></div>
+                    </div>
+                </div>
+                <div class="usertip fs20px fl">
+                    <div>芋儿太硬</div>
+                    <div>服务员太少</div>
+                    <div>芋儿太硬</div>
+                    <div>服务员太少</div>
+                    <div>芋儿太硬</div>
+                    <div>服务员太少</div>
+                    <div>芋儿太硬</div>
+                    <div>服务员太少</div>
+                    <div>芋儿太硬</div>
+                    <div>服务员太少</div>
+                    <div>芋儿太硬</div>
+                    <div>服务员太少</div>
+                    <div>芋儿太硬</div>
+                    <div>服务员太少</div>
+                </div>
             </div>
-            <div class="comment-item">
-                <b class="comment-user">花花:</b>
-                <b class="comment-text">吃得好也~
-                </b>
+            <div class="content fs32px">
+                <p>必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！必须来整锅鸡，慰劳哈国人！</p>
+                <div class="photo">
+                    <img src="images/1111111.jpg" />
+                    <img src="images/222222.jpg" />
+                    <img src="images/1111111.jpg" />
+                    <img src="images/1111111.jpg" />
+                    <img src="images/222222.jpg" />
+                    <img src="images/222222.jpg" />
+                    <img src="images/1111111.jpg" />
+                    <img src="images/1111111.jpg" />
+                </div>
             </div>
-            <div class="comment-item">
-                <b class="comment-user">花花:</b>
-                <b class="comment-text">吃得好也~吃得好也~吃得好也~
-                </b>
+            <div class="post-info fs26px">
+                <span class="time">今天13:20</span>
+                <span class="address">李子坝梁山鸡</span>
+                <div class="praise fr">
+                </div>
             </div>
-        </div>
-        <div class="my-comment fs26px">
-            <input />
-            <button class="fs26px">发送</button>
-        </div>
+            <div class="praise-info">
+                <div class="praise">
+                </div>
+                <div class="praise-list fs26px">
+                    <div class="praise-list-arr fs26px">
+                        花花、胡明博、熊熊、豆腐、王菲、吴白白
+                    </div>
+                    等8人觉得很赞
+                </div>
+            </div>
+            <div class="comment fs26px">
+                <div class="comment-item">
+                    <b class="comment-user">花花:</b>
+                    <b class="comment-text">吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~吃得好也~
+                    </b>
+                </div>
+                <div class="comment-item">
+                    <b class="comment-user">花花:</b>
+                    <b class="comment-text">吃得好也~
+                    </b>
+                </div>
+                <div class="comment-item">
+                    <b class="comment-user">花花:</b>
+                    <b class="comment-text">吃得好也~吃得好也~吃得好也~
+                    </b>
+                </div>
+            </div>
+            <div class="my-comment fs26px">
+                <input />
+                <button class="fs26px">发送</button>
+            </div>
+        </div> -->
     </div>
     <div class="get-more fs26px">
         加载更多
     </div>  
  	<script type="text/javascript" src="js/main.js?rev=d41b52c5ec21d9a29868fb2f8c63d00f"></script>
  	<script type="text/javascript">
-        
+        $(function(){
+            url = window.location.href;
+            $.ajax({
+                type: "GET",
+                url: "http://dishes.liziba.com/?c=pay&a=sign&random="+Math.random(),
+                dataType: "json",
+                data:{'SignUrl':url},
+                success: function(response) {
+                    $("#loading").hide();
+                    //加载函数
+                   var payCtrl=1;
+                    $("#pay").tap(function(){
+                        if(payCtrl){
+                            payCtrl=0;
+                            $("#pay").css("background","#ccc")
+                            $("#pay").html("支付中，请稍等")
+                            callpay();
+                        }else{
+                            return false
+                        }
+                    })
+                    wx.config({
+                        debug: false,
+                        appId: response.appId,
+                        timestamp: response.timestamp,
+                        nonceStr: response.nonceStr,
+                        signature: response.signature,
+                        jsApiList: '[chooseWXPay,onMenuShareTimeline,onMenuShareAppMessage,onMenuShareQQ,onMenuShareWeibo,onMenuShareQZone]'
+                    });
+                }
+            });
+        });
+
+        function callpay() {
+            $.ajax({
+                type: "GET",
+                url: "http://dishes.liziba.com/?c=pay&a=order&openId="+localStorage.openIdYSYCH+"&nickname="+localStorage.username+"&processId="+localStorage.processId,
+                dataType: "json",
+                success: function(response) {
+                    wx.chooseWXPay({
+                        timestamp: response.timeStamp,
+                        nonceStr: response.nonceStr,
+                        package: response.package,
+                        signType: response.signType,
+                        paySign: response.paySign,
+                        success: function (res) {
+                            alert("支付成功，谢谢老板打赏~");
+                            $("#pay").css("background","#1D88D4");
+                            $("#pay").html("好吃得板！打赏大厨2元大洋！");
+                            payCtrl=1;
+                        },
+                        cancel: function (res) {
+                            payCtrl=1;
+                            $("#pay").css("background","#1D88D4")
+                            $("#pay").html("好吃得板！打赏大厨2元大洋！")
+                        },
+                        fail: function (res) {
+                            payCtrl=1;
+                            $("#pay").css("background","#1D88D4")
+                            $("#pay").html("好吃得板！打赏大厨2元大洋！")
+                        }
+                    });
+                }
+            });
+        }
 	</script>
 </body>
 </html>

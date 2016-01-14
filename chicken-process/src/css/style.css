@@ -536,12 +536,12 @@ body {
   bottom: 0.08rem;
 }
 .pagecontainer .procession {
-  width: 8.24rem;
-  height: 1.733333rem;
+  width: 7.893333rem;
+  height: 0.4rem;
   background: url("../images/line-procession.png");
-  background-size: 100% 100%;
+  background-size: 7.893333rem 0.4rem;
   display: block;
-  margin: 0.293333rem auto 0;
+  margin: 0.16rem auto 0;
 }
 .pagecontainer .procession-til {
   width: 10.0rem;
@@ -605,6 +605,7 @@ body {
 .section .sct .sel-btn {
   height: 0.64rem;
   display: inline-block;
+  margin: 0 0.106667rem;
   border: 1px solid #28A3E9;
   border-radius: 0.64rem;
   line-height: 0.533333rem;
@@ -626,7 +627,7 @@ body {
   line-height: 0.6rem;
   padding: 0 0.213333rem;
   border-radius: 4px;
-  margin-bottom: 0.293333rem;
+  margin: 0 0.106667rem 0.293333rem;
   color: #1D88D4;
 }
 .section .sct-height {
@@ -652,7 +653,7 @@ body {
   height: 3.866667rem;
 }
 .section-height2 {
-  height: 8.48rem;
+  height: 8.266667rem;
 }
 .btn-submit {
   width: 9.2rem;
@@ -685,7 +686,7 @@ body {
   width: 1.013333rem;
   height: 1.013333rem;
   border-radius: 50%;
-  background: url("../images/user.jpg");
+  background: url("../images/pageheadimg.png");
   background-size: 100% 100%;
   overflow: hidden;
   display: inline-block;
@@ -726,7 +727,7 @@ body {
   padding: 0 0.16rem;
   color: #fff;
   border-radius: 0.213333rem;
-  margin-bottom: 0.106667rem;
+  margin: 0 0.16rem 0.106667rem 0;
 }
 .friend-section .content p {
   line-height: 0.666667rem;
@@ -756,7 +757,7 @@ body {
   height: 0.6rem;
   background: url("../images/praise.png") no-repeat;
   background-size: cover;
-  background-position: 0 0;
+  background-position: 0 100%;
   margin-top: -0.106667rem;
 }
 .friend-section .praise-info {
@@ -770,12 +771,12 @@ body {
   background-size: 100% 100%;
   display: inline-block;
   position: absolute;
-  top: 0.08rem;
+  top: 0rem;
   left: 0;
 }
 .friend-section .praise-info .praise-list-arr {
   display: inline-block;
-  color: #91BED0;
+  color: #1D88D4;
   vertical-align: 0.026667rem;
 }
 .friend-section .praise-info .praise-list {
@@ -796,7 +797,7 @@ body {
   line-height: 0.586667rem;
 }
 .friend-section .comment .comment-user {
-  color: #91BED0;
+  color: #1D88D4;
   display: inline;
 }
 .friend-section .my-comment {
@@ -816,6 +817,7 @@ body {
   color: #FFF;
   border-radius: 2px;
   vertical-align: middle;
+  margin-left: 0.133333rem;
 }
 .upload-img .conten-input {
   width: 9.2rem;
@@ -844,6 +846,51 @@ body {
   color: #fff;
   margin-bottom: 0.16rem;
 }
+.procession-ico {
+  text-align: center;
+  margin-top: 0.293333rem;
+}
+.procession-ico div {
+  margin-left: 0.906667rem;
+}
+.procession-ico .ico0 {
+  display: inline-block;
+  width: 0.813333rem;
+  height: 1.173333rem;
+  background: url("../images/line-procession_1.png");
+  background-size: 100% 100%;
+}
+.procession-ico .ico1 {
+  display: inline-block;
+  width: 0.813333rem;
+  height: 1.173333rem;
+  background: url("../images/line-procession_2.png");
+  background-size: 100% 100%;
+}
+.procession-ico .ico2 {
+  display: inline-block;
+  width: 0.813333rem;
+  height: 1.173333rem;
+  background: url("../images/line-procession_3.png");
+  background-size: 100% 100%;
+}
+.procession-ico .ico3 {
+  display: inline-block;
+  width: 0.813333rem;
+  height: 1.173333rem;
+  background: url("../images/line-procession_4.png");
+  background-size: 100% 100%;
+}
+.procession-ico .ico4 {
+  display: inline-block;
+  width: 0.813333rem;
+  height: 1.173333rem;
+  background: url("../images/line-procession_5.png");
+  background-size: 100% 100%;
+}
+.nomargin {
+  margin: 0 !important;
+}
 .get-more {
   line-height: 1.12rem;
   text-align: center;
@@ -854,6 +901,9 @@ body {
 }
 .start-ava {
   background-position: 0 0 !important;
+}
+.start-ava2 {
+  background-position: 0 100% !important;
 }
 .fl {
   float: left;
@@ -1546,4 +1596,41 @@ body {
     backface-visibility: hidden;
     perspective: 1000;
   }
+}
+#conforta,
+#unconforta,
+#uploadImg {
+  display: none;
+}
+.inuploading {
+  display: inline-block;
+  width: 2.986667rem;
+  height: 2.986667rem;
+  float: left;
+  margin: 0.133333rem 0.133333rem 0 0;
+  text-align: center;
+  line-height: 2.986667rem;
+  animation: shine 2s infinite;
+}
+section,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.fix-break {
+  background: tranparent url('about:blank');
+  word-break: break-all;
+}
+.fix-display-inblock {
+  display: inline-block !important;
+}
+.fix-imgfour-margin-r {
+  margin-right: 30px !important;
+}
+.js-taste-sel {
+  line-height: 0.6rem !important;
 }

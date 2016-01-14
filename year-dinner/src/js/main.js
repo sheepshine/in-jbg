@@ -1,8 +1,9 @@
 var pagectr=0;
 $(window).scroll(function() {
-	var sec1pos=3.76;
-	var sec2pos=7;　
-	var sec3pos=10;　　
+	var sec1pos=1.6;
+	var sec2pos=3.62;　
+	var sec3pos=6.45;　
+	var sec4pos=11;　
 	var scrollTop = $(this).scrollTop();
 	scrollTop=scrollTop/75;
 	var dpr=window.devicePixelRatio
@@ -13,6 +14,7 @@ $(window).scroll(function() {
 		sec1pos=sec1pos*dpr;
 		sec2pos=sec2pos*dpr;
 		sec3pos=sec3pos*dpr;
+		sec4pos=sec4pos*dpr;
 	}
 	switch (pagectr){
 		case 0:
@@ -33,6 +35,13 @@ $(window).scroll(function() {
 				pagectr++;
 			}
 			break;
+		case 3:
+			if(scrollTop>sec4pos){
+				$(".apply-form").addClass("getin");
+				pagectr++;
+			}
+			break;
+			
 		
 
 	}

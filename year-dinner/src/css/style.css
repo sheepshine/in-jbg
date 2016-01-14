@@ -121,6 +121,10 @@ html {
 .getin .des {
   animation: getin-up 1s;
 }
+.getin.apply-form {
+  animation: getin-up 1s;
+  animation-fill-mode: forwards;
+}
 .section .name {
   position: absolute;
   top: 0;
@@ -163,6 +167,7 @@ html {
 .apply-form {
   position: relative;
   overflow: hidden;
+  opacity: 0;
 }
 .apply-form .ftil1 {
   width: 4.506667rem;
